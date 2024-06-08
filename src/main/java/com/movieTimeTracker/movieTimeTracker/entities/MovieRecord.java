@@ -1,4 +1,4 @@
-package entities;
+package com.movieTimeTracker.movieTimeTracker.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
