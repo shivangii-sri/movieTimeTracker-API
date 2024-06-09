@@ -1,5 +1,4 @@
 package com.movieTimeTracker.movieTimeTracker.entities;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,5 +22,7 @@ public class MovieRecord {
     private int timeSpentInMin;
     private int rating;
     private String comments;
-    private Date watchedDate;
+    private String contentType;
+    private Date fromDate;
+    private Date toDate;
 }
