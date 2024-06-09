@@ -1,0 +1,5 @@
+ALTER TABLE movie_record
+MODIFY COLUMN movie_name VARCHAR(255) NOT NULL;
+
+ALTER TABLE movie_record
+MODIFY COLUMN content_type VARCHAR(255) NOT NULL;
