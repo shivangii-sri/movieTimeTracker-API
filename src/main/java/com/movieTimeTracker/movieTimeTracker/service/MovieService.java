@@ -17,7 +17,28 @@ public class MovieService {
         return this.movieRepository.findAll();
     }
 
-//    public List<MovieRecord> getMovieRecordByYear(int year){
-//        return this.movieRepository.findAllByYear(year);
-//    }
+    public MovieRecord updateMovieRecord(MovieRecord movieRecord){
+        MovieRecord curObj = movieRepository.getReferenceById(movieRecord.getId());
+        curObj.setMovieName(movieRecord.getMovieName());
+        curObj.setComments(movieRecord.getComments());
+        curObj.setRating(movieRecord.getRating());
+        curObj.setContentType(movieRecord.getContentType());
+        curObj.setTimeSpentInMin(movieRecord.getTimeSpentInMin());
+        curObj.setFromDate(movieRecord.getFromDate());
+        curObj.setToDate(movieRecord.getToDate());
+
+        movieRepository.save(curObj);
+        return movieRecord;
+    }
+
+    public boolean deleteMovieRecord(long id) throws Exception{
+        MovieRecord curObj = movieRepository.getReferenceById(id);
+        if(curObj == null){
+            throw new Exception("record not found !");
+        }
+        else{
+            movieRepository.delete(curObj);
+            return true;
+        }
+    }
 }

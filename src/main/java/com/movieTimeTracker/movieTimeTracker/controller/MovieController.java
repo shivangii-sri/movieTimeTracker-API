@@ -24,16 +24,22 @@ public class MovieController {
         return this.movieService.getAllMovieRecord();
     }
 
-    //get movie-record by year
-//    @GetMapping("/movie-record-by-year/{year}")
-//    public List<MovieRecord> getMovieRecordByYear(@PathVariable int year){
-//        return this.movieService.getMovieRecordByYear();
-//    }
-
     //to add a movie record
     @PostMapping("/add-movie")
     public MovieRecord addMovieRecord(@RequestBody MovieRecord movieRecord){
         movieRepository.save(movieRecord);
         return movieRecord;
+    }
+
+    //update movie record
+    @PutMapping("/update-movie")
+    public MovieRecord updateMovieRecord(@RequestBody MovieRecord movieRecord){
+        return this.movieService.updateMovieRecord(movieRecord);
+    }
+
+    //delete movie record
+    @DeleteMapping("/delete-movie/{id}")
+    public boolean deleteMovieRecord(@PathVariable long id) throws Exception {
+        return this.movieService.deleteMovieRecord(id);
     }
 }
