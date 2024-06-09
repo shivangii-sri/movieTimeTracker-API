@@ -17,6 +17,10 @@ public class MovieService {
         return this.movieRepository.findAll();
     }
 
+    public List<MovieRecord>getMovieRecordByYear(int year){
+        return this.movieRepository.findAllByYear(year);
+    }
+
     public MovieRecord updateMovieRecord(MovieRecord movieRecord){
         MovieRecord curObj = movieRepository.getReferenceById(movieRecord.getId());
         curObj.setMovieName(movieRecord.getMovieName());

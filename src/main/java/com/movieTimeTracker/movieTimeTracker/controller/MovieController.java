@@ -24,6 +24,12 @@ public class MovieController {
         return this.movieService.getAllMovieRecord();
     }
 
+    //get all movies by year
+    @GetMapping("/movie-by-year/{year}")
+    public List<MovieRecord>getMovieRecordByYear(@PathVariable int year){
+        return this.movieService.getMovieRecordByYear(year);
+    }
+
     //to add a movie record
     @PostMapping("/add-movie")
     public MovieRecord addMovieRecord(@RequestBody MovieRecord movieRecord){
