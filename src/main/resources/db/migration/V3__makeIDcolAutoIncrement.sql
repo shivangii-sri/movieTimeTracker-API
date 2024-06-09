@@ -1,0 +1,2 @@
+ALTER TABLE movietimetracker.movie_record
+MODIFY COLUMN `id` BIGINT NOT NULL AUTO_INCREMENT;
